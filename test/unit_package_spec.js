@@ -96,6 +96,16 @@ describe('Unit::deployable-ringbuffer', function(){
       expect( rb.last().toString() ).to.equal( 'testb' )
     })
 
+    it('should return a write stream with cb', function(){
+      let rb = new RingBuffer(2)
+      let spy = sinon.spy()
+      let ws = rb.writeStream((ch)=> spy(ch))
+      ws.write('test')
+      expect( spy.calledOnce ).to.be.true
+      expect( spy.calledWith(new Buffer('test')) ).to.be.true
+    })
+
+
   })
 
 })
