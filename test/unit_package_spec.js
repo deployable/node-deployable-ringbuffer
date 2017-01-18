@@ -1,9 +1,11 @@
+const expect = require('chai').expect
 const RingBuffer = require('../')
+
 
 describe('Unit::deployable-ringbuffer', function(){
 
   describe('Something does something', function(){
-  
+
     it('should create a RingBuffer', function(){
       expect( new RingBuffer(5) ).to.be.ok
     })
@@ -29,6 +31,14 @@ describe('Unit::deployable-ringbuffer', function(){
       rb.add('one')
       rb.add('two')
       expect( rb.last() ).to.equal('two')
+    })
+
+    it('should get the last added when added', function(){
+      let rb = new RingBuffer(100)
+      rb.add('first')
+      expect( rb.last() ).to.equal('first')
+      rb.add('second')
+      expect( rb.last() ).to.equal('second')
     })
 
     it('should get undefined when there is no last', function(){
@@ -75,6 +85,15 @@ describe('Unit::deployable-ringbuffer', function(){
       let ws = rb.writeStream()
       ws.write('test')
       expect( rb.last().toString() ).to.equal( 'test' )
+    })
+
+    it('should return a write stream', function(){
+      let rb = new RingBuffer(2)
+      let ws = rb.writeStream()
+      ws.write('test')
+      ws.write('testa')
+      ws.write('testb')
+      expect( rb.last().toString() ).to.equal( 'testb' )
     })
 
   })
