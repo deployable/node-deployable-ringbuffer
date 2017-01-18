@@ -1,6 +1,6 @@
 {
   "name": "deployable-ringbuffer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Array like circualar buffer",
   "main": "lib/index.js",
   "scripts": {
