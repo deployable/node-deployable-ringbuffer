@@ -41,7 +41,7 @@ rb.toArray() // => [ , , , , ]
 ### License
 
 deployable-ringbuffer is released under the MIT license.
-Copyright 2016 Matt Hoyle <code at deployable.co>
+Copyright 2016 Matt Hoyle Deployable Ltd
 
 https://github.com/deployable/deployable-ringbuffer
 
