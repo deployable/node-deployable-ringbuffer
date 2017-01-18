@@ -87,7 +87,7 @@ describe('Unit::deployable-ringbuffer', function(){
       expect( rb.last().toString() ).to.equal( 'test' )
     })
 
-    it('should return a write stream', function(){
+    it('should write many times to stream', function(){
       let rb = new RingBuffer(2)
       let ws = rb.writeStream()
       ws.write('test')
