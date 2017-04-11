@@ -1,18 +1,18 @@
-# [deployable-ringbuffer](https://github.com/deployable/deployable-ringbuffer)
+# [Deployable ringbuffer](https://github.com/deployable/node-deployable-ringbuffer)
 
 Circular buffer stored in an array
 
 ### Install
  
-    npm install deployable-ringbuffer --save
+    npm install @deployable/ringbuffer --save
 
-    yarn add deployable-ringbuffer
+    yarn add @deployable/ringbuffer
 
 ### Usage
 
 ```javascript
 
-const RingBuffer = require('deployable-ringbuffer')
+const RingBuffer = require('@deployable/ringbuffer')
 const rb = new RingBuffer(5)
 
 // Add items
@@ -43,5 +43,5 @@ rb.toArray() // => [ , , , , ]
 deployable-ringbuffer is released under the MIT license.
 Copyright 2016 Matt Hoyle Deployable Ltd
 
-https://github.com/deployable/deployable-ringbuffer
+https://github.com/deployable/node-deployable-ringbuffer
 
