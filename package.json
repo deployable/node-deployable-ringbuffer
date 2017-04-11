@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha",
     "test:debug": "DEBUG='*' mocha debug",
-    "release:patch": "set -uex; rm -rf node_modules; yarn; yarn test; git push; npm version patch; yarn publish --access public; git push; git push --tag",
+    "release:patch": "set -uex; rm -rf node_modules; yarn; yarn test; git push; npm version patch; npm publish --access public; git push; git push --tag",
     "release:test": "set -uex; yarn test; npm version prerelease; npm publish --tag testing --access public"
   },
   "repository": {
